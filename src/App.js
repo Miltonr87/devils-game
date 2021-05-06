@@ -8,9 +8,6 @@ import Games from './components/Pages/Games';
 import Search from './components/Pages/Search';
 
 
-// API https://api.rawg.io/api/games?key=167f06942781408ea12a369d433ce99b
-
-
 function App() {
   return (
     <BrowserRouter>
