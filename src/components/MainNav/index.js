@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import GamesIcon from '@material-ui/icons/Games';
 import SearchGames from '@material-ui/icons/Search';
 
@@ -20,6 +20,13 @@ const useStyles = makeStyles({
 export default function MainNav() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (value === 0) history.push("/");
+    else if (value === 1) history.push("/games");
+    else if (value === 2) history.push("/search");
+  })
 
   return (
     <BottomNavigation
@@ -34,10 +41,6 @@ export default function MainNav() {
         style={{ color: "white" }} 
         label="Recents" 
         icon={<RestoreIcon />} />
-      <BottomNavigationAction 
-        style={{ color: "white" }}
-        label="Favorites" 
-        icon={<FavoriteIcon />} />
       <BottomNavigationAction 
         style={{ color: "white" }}
         label="Consoles" 
