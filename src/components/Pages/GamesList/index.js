@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+// import GameContent from '../../GameContent';
+import { Link } from 'react-router-dom'
 
 const GamesList = () => {
 
-    const [ content, setContent] = useState([]);
+    const [ games, setGames] = useState([]);
 
     const fetchGames = async () => {
         const { data } = await axios.get(
@@ -12,7 +14,7 @@ const GamesList = () => {
         
         console.log(data);    
 
-        setContent(data.results);
+        setGames(data.results);
     };
 
     useEffect(() => {
@@ -24,6 +26,23 @@ const GamesList = () => {
     return (
         <div>
             <span className="pageTitle">GamesList</span>
+            <div className="gamesList">
+            {
+        games.map(game => (
+          <li key={game.id}>
+            <Link to={{
+                pathname: `/game/${game.name}`,
+                gameProps:{
+                  game: game
+                }
+              }}>
+            <h3>{game.name}</h3>
+            <img src={game.background_image} alt="game"/>
+            </Link>
+          </li>
+        ))
+      }
+            </div>
         </div>
     )
 };
