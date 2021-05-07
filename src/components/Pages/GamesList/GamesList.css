@@ -1,0 +1,69 @@
+.trending {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.link {
+    color: #fff;
+    text-decoration-line: none;
+}
+
+.media {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    /*justify-content: space-between;
+    align-items: center;*/
+    text-align: center;
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #282c34;
+    border-radius: 10px;
+    position: relative;
+    font-family: 'ubuntu';
+}
+
+.media:hover {
+    background-color: darkorange;
+    color: black;
+    transition: 0.4s ease-out;
+}
+
+@media (max-width: 550px) {
+    .media {
+        width: 46%;
+        /*flex-direction: wrap;*/
+    }
+}
+
+.game-poster {
+    border-radius: 10px;
+}
+
+/*
+.games-title {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-family: 'ubuntu';
+    font-size: 2vw;
+    padding: 4px;
+    border-radius: 50px;
+    color: white;
+}*/
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    padding: 8px 0;
+}
+
+.subTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2px;
+    padding-bottom: 3px;
+}

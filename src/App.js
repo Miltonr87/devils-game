@@ -4,8 +4,9 @@ import './App.css';
 import Header from './components/Header';
 import MainNav from './components/MainNav';
 import GamesList from './components/Pages/GamesList';
-import Games from './components/Pages/Games';
-import Search from './components/Pages/Search';
+import Game from './components/Pages/Game';
+import SearchGames from './components/Pages/SearchGames';
+
 
 
 function App() {
@@ -16,8 +17,8 @@ function App() {
         <Container>
           <Switch>
             <Route path='/' component={GamesList} exact />
-            <Route path='/games' component={Games} />
-            <Route path='/search' component={Search} />
+            <Route path='/game/:id' component={Game} />
+            <Route path='/search' component={SearchGames} />
           </Switch>
         </Container>
       </div>

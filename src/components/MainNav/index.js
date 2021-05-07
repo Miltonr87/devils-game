@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     width: '100%',
     position: 'fixed',
     bottom: 0,
-    backgroundColor: '#2d313a',
+    backgroundColor: 'black',
     zIndex: 100,
   },
 });
@@ -24,7 +24,7 @@ export default function MainNav() {
 
   useEffect(() => {
     if (value === 0) history.push("/");
-    else if (value === 1) history.push("/games");
+    else if (value === 1) history.push("/");
     else if (value === 2) history.push("/search");
   })
 
