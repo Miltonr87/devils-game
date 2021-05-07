@@ -1,6 +1,6 @@
 ### Devils Game
 
-![Screen Shot](https://github.com/Miltonr87/GlobeCoin/blob/main/DevilsGame.png)
+![Screen Shot](https://github.com/Miltonr87/devils-game/blob/main/DevilsGame.png)
 
 [X] Desktop version
 
