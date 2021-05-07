@@ -5,6 +5,7 @@ import Header from './components/Header';
 import MainNav from './components/MainNav';
 import GamesList from './components/Pages/GamesList';
 import Game from './components/Pages/Game';
+import Developers from './components/Pages/Developers';
 import SearchGames from './components/Pages/SearchGames';
 
 
@@ -18,7 +19,8 @@ function App() {
           <Switch>
             <Route path='/' component={GamesList} exact />
             <Route path='/game/:id' component={Game} />
-            <Route path='/search' component={SearchGames} />
+            <Route path='/developers' component={Developers} />
+            <Route path='/searchgames' component={SearchGames} />
           </Switch>
         </Container>
       </div>

@@ -13,6 +13,7 @@ const useStyles = makeStyles({
     position: 'fixed',
     bottom: 0,
     backgroundColor: 'black',
+    boxShadow: '0px, 1px, 5px, black',
     zIndex: 100,
   },
 });
@@ -23,10 +24,12 @@ export default function MainNav() {
   const history = useHistory();
 
   useEffect(() => {
-    if (value === 0) history.push("/");
-    else if (value === 1) history.push("/");
-    else if (value === 2) history.push("/search");
-  })
+    if (value === 0) {
+      history.push("/")
+    } else {
+      history.push("/developers")
+    }  
+  });
 
   return (
     <BottomNavigation
@@ -40,15 +43,15 @@ export default function MainNav() {
       <BottomNavigationAction
         style={{ color: "white" }} 
         label="Recents" 
-        icon={<RestoreIcon />} />
+        icon={<RestoreIcon style={{ fontSize: "2.1rem" }}  />} />
       <BottomNavigationAction 
         style={{ color: "white" }}
-        label="Consoles" 
-        icon={<GamesIcon />} />
+        label="Developers" 
+        icon={<GamesIcon style={{ fontSize: "2.1rem" }}  />} /> 
       <BottomNavigationAction 
         style={{ color: "white" }}
         label="Search Games" 
-        icon={<SearchGames />} />  
+        icon={<SearchGames style={{ fontSize: "2.1rem" }} />} />   
       </BottomNavigation>
   );
 }
