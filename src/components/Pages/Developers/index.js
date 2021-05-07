@@ -1,59 +1,44 @@
-// https://api.rawg.io/api/creators
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-// import { Grid } from "@material-ui/core"; 
-import { Badge } from '@material-ui/core';
-// import './GamesList.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import {
+  DevelopersList,
+  DeveloperMedia,
+  DeveloperPoster,
+  DeveloperTitle,
+  DeveloperInfo,
+} from "./Developers";
 
 const Developers = () => {
-    const [ games, setGames] = useState([]);
+  const [developers, setDevelopers] = useState([]);
 
-    const fetchGames = async () => {
-        const { data } = await axios.get(
-            `https://api.rawg.io/api/creators?key=${process.env.REACT_APP_API_KEY}`
-            );
-        console.log(data.results);    
-        setGames(data.results);
-    };
+  const fetchDevelopers = async () => {
+    const { data } = await axios.get(
+      `https://api.rawg.io/api/creators?key=${process.env.REACT_APP_API_KEY}`
+    );
+    console.log(data.results);
+    setDevelopers(data.results);
+  };
 
-    useEffect(() => {
-        fetchGames()
-    }, []);
+  useEffect(() => {
+    fetchDevelopers();
+  }, []);
 
-    return (
-        <div>
-            <div className="trending" >
-                {games.map(game => (
-                    <Link 
-                    className="link"
-                    key={game.id}
-                    to={{
-                        pathname: `/game/${game.id}`,
-                        gameProps:{
-                        game: game
-                        }
-                    }}>
-                        <div className="media">
-                            <Badge 
-                            badgeContent={game.rating}
-                            color={game.rating >= 4? 'primary' : 'error'} />
-                                <img 
-                                className="game-poster" 
-                                src={game.image} 
-                                alt="game" />
-                                    <b className="title"> {game.name}</b>
-                                    <span className="subTitle"> {game.games.map(g => `${g.name} - `)}  
-                                    </span>
-                        </div>
-                    </Link>))}
-            </div>
-            <div>
-                   <br />
-                   <br />
-            </div>    
-        </div> 
-    )
+  return (
+    <>
+      <DevelopersList>
+        {developers.map((developer) => (
+          <DeveloperMedia>
+            <DeveloperPoster src={developer.image} alt="game" />
+            <DeveloperTitle> {developer.name}</DeveloperTitle>
+            <DeveloperInfo>
+              {developer.games.map((game) => `${game.name} | `)}
+            </DeveloperInfo>
+          </DeveloperMedia>
+        ))}
+      </DevelopersList>
+      <br />
+    </>
+  );
 };
 
 export default Developers;

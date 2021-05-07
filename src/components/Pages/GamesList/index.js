@@ -1,59 +1,61 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-// import { Grid } from "@material-ui/core"; 
-import { Badge } from '@material-ui/core';
-import './GamesList.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Badge } from "@material-ui/core";
+import {
+  GamesRecent,
+  LinkRouter,
+  GameMedia,
+  GamePoster,
+  Title,
+} from "./GamesList";
 
 const GamesList = () => {
-    const [ games, setGames] = useState([]);
+  const [games, setGames] = useState([]);
 
-    const fetchGames = async () => {
-        const { data } = await axios.get(
-            `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}`
-            );
-        console.log(data.results);    
-        setGames(data.results);
-    };
+  const fetchGames = async () => {
+    const { data } = await axios.get(
+      `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}`
+    );
+    console.log(data.results);
+    setGames(data.results);
+  };
 
-    useEffect(() => {
-        fetchGames()
-    }, []);
+  useEffect(() => {
+    fetchGames();
+  }, []);
 
-    return (
-        <div>
-            <div className="trending" >
-                {games.map(game => (
-                    <Link 
-                    className="link"
-                    key={game.id}
-                    to={{
-                        pathname: `/game/${game.id}`,
-                        gameProps:{
-                        game: game
-                        }
-                    }}>
-                        <div className="media">
-                            <Badge 
-                            badgeContent={game.rating}
-                            color={game.rating >= 4? 'primary' : 'error'} />
-                                <img 
-                                className="game-poster" 
-                                src={game.background_image} 
-                                alt="game" />
-                                    <b className="title">{game.name}</b>
-                                    <span className="subTitle">Teste / 
-                                    <span className="subTitle"> Teste2 </span>    
-                                    </span>
-                        </div>
-                    </Link>))}
-            </div>
-            <div>
-                   <br />
-                   <br />
-            </div>    
-        </div> 
-    )
+  return (
+    <>
+      <GamesRecent>
+        {games.map((game) => (
+          <LinkRouter
+            className="link"
+            key={game.id}
+            to={{
+              pathname: `/game/${game.id}`,
+              gameProps: {
+                game: game,
+              },
+            }}
+          >
+            <GameMedia>
+              <Badge
+                badgeContent={game.rating}
+                color={game.rating >= 4 ? "primary" : "error"}
+              />
+              <GamePoster
+                className="game-poster"
+                src={game.background_image}
+                alt="game"
+              />
+              <Title className="title">{game.name}</Title>
+            </GameMedia>
+          </LinkRouter>
+        ))}
+      </GamesRecent>
+      <br />
+    </>
+  );
 };
 
 export default GamesList;
