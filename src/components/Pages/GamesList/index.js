@@ -11,7 +11,6 @@ import {
 
 const GamesList = () => {
   const [games, setGames] = useState([]);
-
   const fetchGames = async () => {
     const { data } = await axios.get(
       `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}`

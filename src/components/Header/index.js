@@ -1,13 +1,14 @@
 import React from 'react';
-import './Header.css'
+import { HeaderContainer } from './Header';
+import { animateScroll as scroll } from "react-scroll";
+
 
 const Header = () => {
+    const toggleHome = () => {
+        scroll.scrollToTop();
+      };
 
-    const smoothScroll = () => window.scroll(0,0);
-
-    return <span 
-    onClick={smoothScroll}
-    className="header"> 🎮 Devils Games </span>
+    return <HeaderContainer onClick={toggleHome}> 🎮 Devils Games </HeaderContainer>
 };
 
 export default Header;

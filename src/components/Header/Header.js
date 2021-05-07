@@ -1,4 +1,6 @@
-.header {
+import styled from "styled-components";
+
+export const HeaderContainer = styled.span`
     width: 100%;
     cursor: pointer;
     position: fixed;
@@ -7,16 +9,14 @@
     text-transform: uppercase;
     background-color: black;
     font-family: 'ubuntu', sans-serif;
-    font-size: 5vw;
+    font-size: 4vw;
     padding-bottom: 15px;
     box-shadow: 0px 1px 5px black;
     color: white;
     z-index: 100;
-}
 
 @media (max-width: 1000px) {
-    .header {
         padding-top: 15px;
         font-size: 6.4vw;
-    }
 }
+`;

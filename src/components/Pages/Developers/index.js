@@ -10,7 +10,6 @@ import {
 
 const Developers = () => {
   const [developers, setDevelopers] = useState([]);
-
   const fetchDevelopers = async () => {
     const { data } = await axios.get(
       `https://api.rawg.io/api/creators?key=${process.env.REACT_APP_API_KEY}`
