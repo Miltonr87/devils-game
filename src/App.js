@@ -1,58 +1,26 @@
-import { createGlobalStyle } from "styled-components";
-import { Container } from "@material-ui/core";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
-import MainNav from "./components/MainNav";
-import GamesList from "./components/Pages/GamesList";
-import Game from "./components/Pages/Game";
-import Developers from "./components/Pages/Developers";
-import SearchGames from "./components/Pages/SearchGames";
+import './style.css'
+import { BiMenuAltRight } from 'react-icons/bi';
+import { AiOutlineClose } from 'react-icons/ai';
 
-const GlobalStyle = createGlobalStyle`
-  * {
-      scroll-behavior: smooth;
-      font-family: 'Ubuntu';
-  }
-
-  body {
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .app {
-      min-height: 100vh;
-      background-color: #223343;
-      color: white;
-      padding-top: 130px;
-  }
-
-  @media(max-width: 700px) {
-      .app {
-          padding-top: 70px;
-      }
-}`;
-
-function App() {
+function Webcontent() {
   return (
     <>
-      <GlobalStyle />
-      <BrowserRouter>
-        <Header />
-        <div className="app">
-          <Container>
-            <Switch>
-              <Route path="/" component={GamesList} exact />
-              <Route path="/game/:id" component={Game} />
-              <Route path="/developers" component={Developers} />
-              <Route path="/searchgames" component={SearchGames} />
-            </Switch>
-          </Container>
-        </div>
-        <MainNav />
-      </BrowserRouter>
+      <div className='open-menu'>
+        <BiMenuAltRight id="m" className="open" />
+        <AiOutlineClose id="m" className="close" />
+      </div>
+
+      <div className="menu">
+        <ul>
+          <a href="#home" className='active'>Home</a>
+          <a href="#community">Community</a>
+          <a href="#games">Games</a>
+          <a href="#streams">Streams</a>
+          <a href="#contact">Contact</a> 
+        </ul>
+      </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default Webcontent;
