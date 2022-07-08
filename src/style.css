@@ -47,7 +47,7 @@ html {
 
 @keyframes show {
   to {
-    transform: translateX(0);
+    transform: translate(0);
     opacity: 1;
   }
 }
@@ -79,7 +79,7 @@ html {
 .menu {
   position: fixed;
   top: 3%;
-  right: calc(3% + 65pc + 3%);
+  right: calc(3% + 65px + 3%);
   overflow: hidden;
   z-index: 12;
   opacity: 0;
@@ -104,7 +104,7 @@ html {
   list-style: none;
   background-color: rgba(255,255,255, 0.623);
   backdrop-filter: blur(50px);
-  height: 50px;
+  height: 65px;
   border-radius: 20px;
   justify-content: center;
   align-items: center;
