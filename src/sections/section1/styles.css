@@ -80,7 +80,7 @@ h3 {
 
 .bg-wp img {
   position: absolute;
-  left: 4%;
+  left: 3%;
   height: 100%;
   width: 115%;
   right: 0%;
@@ -170,4 +170,45 @@ h3 {
 
 .section.s1.active .text-container .explore-btn {
   animation: show 1.3s ease 1.5s forwards;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ SOCIALS ICONS ]
+/////////////////////////////////////////////////////////////////*/
+
+.section.s1 .socials {
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transform: translate(150%);
+  opacity: 0;
+}
+
+.section.s1.active .socials {
+  animation: show 0.3s ease-out 2s forwards;
+}
+
+.section.s1 .socials::before {
+  position: absolute;
+  content: '';
+  height: 120px;
+  width: 1px;
+  background-color: rgba(211, 235, 241, 0.445);
+  transform: translateY(-154%);
+}
+
+.section.s1 .socials .icon {
+  position: relative;
+  margin: 13px 0;
+  fill: rgba(255, 255, 255, 0.877);
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
+@media screen {
 }
