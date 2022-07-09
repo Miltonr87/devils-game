@@ -1,4 +1,4 @@
-import img from '../../assets/img/brazil.png';
+import img from '../../assets/img/brazilFace.png';
 import './styles.css';
 
 import { SiYoutubegaming } from 'react-icons/si';
