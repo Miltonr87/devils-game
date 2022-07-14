@@ -164,7 +164,7 @@ export const ShowMobileGuideButton = styled.button`
 
     @media (max-width: 768px) {
         display: none
-        /* bug with almost mobile dimensions */
+        /* bug in almost mobile dimensions */
     }
 `;
 
@@ -187,7 +187,7 @@ export const SoundControlButton = styled.button`
     }
 
     @media (max-width: 768px) {
-        padding: 13px;
+        padding: 11px;
     }
 `;
 
