@@ -21,42 +21,43 @@ export const MobileActionNav = ({
     <S.MobileArrowContainer>
       <button onClick={() => upAction()}>
         <ArrowDropUpIcon
-          fontSize="medium"
+          fontSize="large"
           style={{
             color: 'goldenrod',
-
-            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            fontSize: '20px',
           }}
         />
       </button>
       <div>
         <button style={{ marginRight: '15px' }} onClick={() => leftAction()}>
           <ArrowLeftIcon
-            fontSize="medium"
+            fontSize="large"
             style={{
               color: 'goldenrod',
-              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              fontSize: '20px',
             }}
           />
         </button>
         <button onClick={() => rightAction()}>
           <ArrowRightIcon
-            fontSize="medium"
+            fontSize="large"
             style={{
               color: 'goldenrod',
-
-              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              fontSize: '20px',
             }}
           />
         </button>
       </div>
       <button onClick={() => downAction()}>
         <ArrowDropDownIcon
-          fontSize="medium"
+          fontSize="large"
           style={{
             color: 'goldenrod',
-
-            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            fontSize: '20px',
           }}
         />
       </button>

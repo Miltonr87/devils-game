@@ -338,7 +338,6 @@ export const MobileActionInnerContainer = styled.div`
 export const MobileArrowContainer = styled.div`
     margin-top: 7px;
     width: 100px;
-
     height: 350px;
     margin-right: 5px;
     margin-left: -5px;
@@ -347,11 +346,11 @@ export const MobileArrowContainer = styled.div`
 
     button {
         background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        border: 3px solid goldenrod;
-        margin: 2px;
-        width: 37px;
-        height: 37px;
+        border-radius: 33%;
+        border: 3.5px solid goldenrod;
+        margin: 1px;
+        width: 38px;
+        height: 35px;
 
         &:focus {
             background-color: darkred;
