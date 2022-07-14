@@ -207,7 +207,7 @@ export const Tetris = () => {
                   )}
                   <StartButton gameOver={gameOver} callback={startGame} />
                   <S.ShowGuideButton onClick={() => setShowGuide(true)}>
-                    💻 Controls
+                    Controls
                   </S.ShowGuideButton>
                   <S.Signature>© Milton Rodrigues - {date}</S.Signature>
                 </S.SummaryInfoWrapper>
