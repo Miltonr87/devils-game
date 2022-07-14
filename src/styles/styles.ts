@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import bgImage from "../assets/background.jpg";
+import heart from "../assets/heart.gif";
+import flame from "../assets/flame.gif";
 import soundOn from "../assets/soundon.svg";
 import help from "../assets/help.svg";
 import soundOff from "../assets/soundoff.svg";
@@ -11,8 +13,8 @@ type StyledCellProps = {
 
 export const StyledCell = styled.div<StyledCellProps>`
     width: auto;
-    background: rgba(${({ color }) => (color ? color : "0,0,0")}, 0.8);
-    border: ${({ type }) => (type === 0 ? "0px solid" : "4px solid")};
+    background: rgba(${({ color }) => (color ? color : "0,0,0")}, 0.5);
+    border: ${({ type }) => (type === 0 ? "0px solid" : "5px solid")};
     border-bottom-color: rgba(${({ color }) => color}, 0.1);
     border-right-color: rgba(${({ color }) => color}, 1);
     border-top-color: rgba(${({ color }) => color}, 1);
@@ -161,7 +163,7 @@ export const ShowMobileGuideButton = styled.button`
     cursor: pointer;
 
     @media (max-width: 768px) {
-        padding: 10px;
+        padding: 13px;
     }
 `;
 
@@ -185,7 +187,7 @@ export const SoundControlButton = styled.button`
     }
 
     @media (max-width: 768px) {
-        padding: 10px;
+        padding: 13px;
     }
 `;
 
@@ -211,6 +213,38 @@ export const TetrisTitleMobile = styled.img`
     }
 `;
 
+export const StageWrapper = styled.div`
+    width: 100%;
+    max-width: 25vw;
+    width: 100%;
+    transition: 2s height ease ;
+    margin-bottom: 5px;
+
+    /* Victory Animation */
+    &.cleared {
+        box-shadow: 0px 0px 11px 11px goldenrod;
+        background-image: url(${heart});
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+    
+    /* Game Over Animation */
+    &.gameover {
+        box-shadow: 0px 0px 11px 11px red;
+        background-image: url(${flame});
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+    @media (max-width: 768px) {
+        max-width: 85%;
+    }
+`;
+
+
+/*------------------- GUIDE MODAL -----------------------*/
+
 export const ShowGuideButton = styled.button`
     font-size: 1.1rem;
     margin: 10px;
@@ -223,25 +257,6 @@ export const ShowGuideButton = styled.button`
     border-radius: 53px;
     cursor: pointer;
     border: 2px solid white;
-`;
-
-export const StageWrapper = styled.div`
-    width: 100%;
-    max-width: 25vw;
-    width: 100%;
-    transition: 0.3s ease-in-out;
-    margin-bottom: 5px;
-
-    &.cleared {
-        box-shadow: 0px 0px 11px 11px white;
-    }
-
-    &.gameover {
-        box-shadow: 0px 0px 11px 11px red;
-    }
-    @media (max-width: 768px) {
-        max-width: 85%;
-    }
 `;
 
 export const GuideModalTitle = styled.h1`
@@ -278,10 +293,13 @@ export const CloseGuideModalButton = styled.button`
     top: 10px;
     right: 10px;
     background-color: transparent;
-    border: 4px solid black;
+    border: 4px hidden black;
     font-weight: bold;
     font-size: 1rem;
 `;
+
+
+/*------------------- FOOTER -----------------------*/
 
 export const Signature = styled.a`
     color: white;
@@ -302,6 +320,8 @@ export const SummaryInfoWrapper = styled.div`
         flex-direction: row;
     }
 `;
+
+/*------------------- MOBILE CONTROL -----------------------*/
 
 export const MobileOuterActionContainer = styled.div`
     display: flex;
@@ -330,7 +350,7 @@ export const MobileArrowContainer = styled.div`
         height: 35px;
 
         &:focus {
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: darkred;
         }
 
         svg {

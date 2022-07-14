@@ -11,7 +11,7 @@ import { usePlayer } from '../hooks/usePlayer';
 import { useStage } from '../hooks/useStage';
 import { useGameStatus } from '../hooks/useGameStatus';
 import * as S from '../styles/styles';
-import logo from '../assets/diablo.gif';
+import logo from '../assets/tetris.svg';
 import arrows from '../assets/arrows.png';
 import tetrisMp3 from '../assets/tetris.mp3';
 
@@ -74,7 +74,7 @@ export const Tetris = () => {
   };
 
   const drop = () => {
-    // increase level when player clear 10 rows
+    // RULES: increase level when player clear 10 rows(hells)
     if (rows > (level + 1) * 10) {
       setLevel((prev) => prev + 1);
       setDropTime(1000 / (level + 1) + 200);
@@ -193,7 +193,7 @@ export const Tetris = () => {
                   {gameOver ? (
                     <>
                       <Display
-                        text="👹 HIGHWAY TO HELL"
+                        text="🔥 HELL OVER !!! "
                         gameOver={gameOver}
                       ></Display>
                       <Display text={`⭐ SCORE: ${score}`} />
@@ -201,13 +201,13 @@ export const Tetris = () => {
                   ) : (
                     <>
                       <Display text={`⭐ SCORE: ${score}`} />
-                      <Display text={`❤️‍🔥 HEAL: ${rows}`} />
-                      <Display text={`🔥 HELL: ${level}`} />
+                      <Display text={`❤️‍🔥 HEARTS: ${rows}`} />
+                      <Display text={`🔥 HELLS: ${level}`} />
                     </>
                   )}
                   <StartButton gameOver={gameOver} callback={startGame} />
                   <S.ShowGuideButton onClick={() => setShowGuide(true)}>
-                    🕹️ Controls
+                    💻 Controls
                   </S.ShowGuideButton>
                   <S.Signature>© Milton Rodrigues - {date}</S.Signature>
                 </S.SummaryInfoWrapper>
@@ -229,7 +229,8 @@ export const Tetris = () => {
             <p>Right: move right</p>
             <p>Down: move down</p>
             {window.innerWidth > 768 ? (
-              <p>Hold Down: move down quickly</p>
+              // eslint-disable-next-line react/style-prop-object
+              <i>"Hold Down: move down quickly"</i>
             ) : null}
           </S.GuideContentInnerContainer>
         </S.GuideContentContainer>
