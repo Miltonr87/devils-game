@@ -193,7 +193,7 @@ export const Tetris = () => {
                   {gameOver ? (
                     <>
                       <Display
-                        text="👹 HELL OVER !!! "
+                        text="🔥 HELL OVER !!! "
                         gameOver={gameOver}
                       ></Display>
                       <Display text={`⭐ SCORE: ${score}`} />
@@ -201,8 +201,8 @@ export const Tetris = () => {
                   ) : (
                     <>
                       <Display text={`⭐ SCORE: ${score}`} />
-                      <Display text={`💛 HEARTS: ${rows}`} />
-                      <Display text={`🔥 HELLS: ${level}`} />
+                      <Display text={`💛 HEART: ${rows}`} />
+                      <Display text={`🤘 ROCK: ${level}`} />
                     </>
                   )}
                   <StartButton gameOver={gameOver} callback={startGame} />
