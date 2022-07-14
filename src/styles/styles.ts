@@ -338,10 +338,9 @@ export const MobileActionInnerContainer = styled.div`
 export const MobileArrowContainer = styled.div`
     margin-top: 7px;
     width: 100px;
-    height: 350px;
+    align-self: space-between;
     margin-right: 5px;
     margin-left: -5px;
-    margin-bottom: 10px;
     padding: 5px 15px;
 
     button {
