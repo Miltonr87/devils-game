@@ -336,25 +336,25 @@ export const MobileActionInnerContainer = styled.div`
 `;
 
 export const MobileArrowContainer = styled.div`
-    margin-top: 5px;
+    margin-top: 7px;
     width: 100px;
+
+    height: 350px;
     margin-right: 5px;
     margin-left: -5px;
+    margin-bottom: 10px;
+    padding: 5px 15px;
 
     button {
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 50%;
-        border: 2px solid goldenrod;
+        border: 3px solid goldenrod;
         margin: 2px;
-        width: 35px;
-        height: 35px;
+        width: 37px;
+        height: 37px;
 
         &:focus {
             background-color: darkred;
-        }
-
-        svg {
-            margin-top: 3px;
         }
     }
 `;
