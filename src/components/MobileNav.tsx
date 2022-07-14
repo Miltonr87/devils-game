@@ -49,7 +49,7 @@ export const MobileNav = ({
           </S.MobileActionInnerContainer>
           <S.MobileActionInnerContainer>
             <Display text={`⭐ ${score}`} />
-            <Display text={`❤️‍🔥 ${rows}`} />
+            <Display text={`💛 ${rows}`} />
             <Display text={`🔥 ${level}`} />
           </S.MobileActionInnerContainer>
           <StartButton gameOver={gameOver} callback={startGame} />

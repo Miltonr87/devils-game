@@ -172,7 +172,6 @@ export const SoundControlButton = styled.button`
     padding: 20px;
     border-radius: 50%;
     position: absolute;
-    right: 0;
     top: 10px;
     right: 10px;
     background-repeat: no-repeat;

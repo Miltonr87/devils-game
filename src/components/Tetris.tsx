@@ -201,7 +201,7 @@ export const Tetris = () => {
                   ) : (
                     <>
                       <Display text={`⭐ SCORE: ${score}`} />
-                      <Display text={`❤️‍🔥 HEARTS: ${rows}`} />
+                      <Display text={`💛 HEARTS: ${rows}`} />
                       <Display text={`🔥 HELLS: ${level}`} />
                     </>
                   )}
