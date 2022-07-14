@@ -96,13 +96,14 @@ export const StyledDisplay = styled.div<StyledDisplayProps>`
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    text-align: center;
     margin: 0 0 20px 0;
     padding: 20px;
-    border: 2px solid mediumspringgreen;
+    border: 1px solid goldenrod;
     min-height: 30px;
     width: 100%;
     border-radius: 10px;
-    color: ${({ gameOver }) => (gameOver ? "white" : "hotpink")};
+    color: ${({ gameOver }) => (gameOver ? "white" : "goldenrod")};
     text-shadow: 0.25px 0.25px 0 #0ff, -0.25px 0.25px 0 #f00;
     font-weight: bold;
     background: ${({ gameOver }) =>
@@ -123,18 +124,15 @@ export const StyledStartButton = styled.button`
     width: 100%;
     border-radius: 10px;
     font-weight: bold;
-    font-family: "Cutive Mono", monospace;
-    /* text-shadow: 1.25px 1.25px 0 #0ff, -1.25px 1.25px 0 #f00; */
-    border: 2px solid aqua;
-    color: #ff0074;
+    text-shadow: 1.25px 0 , -1.25px 1.25px 0 #f00; 
+    border: 2px solid goldenrod;
+    color: goldenrod;
     background: rgba(0, 0, 0, 0.75);
-    text-shadow: 0.25px 0.25px 0 #0ff, -0.25px 0.25px 0 #f00;
-    font-size: 1.25rem;
-    outline: none;
+    font-size: 2rem;
     cursor: pointer;
     transition: 0.3s ease;
     &:hover {
-        text-decoration: underline;
+        background-color: darkred;
     }
     &:active {
         transform: translateY(5px);
@@ -157,10 +155,9 @@ export const ShowMobileGuideButton = styled.button`
     left: 10px;
     background-repeat: no-repeat;
     background-position: center;
-    outline: none;
     background-size: 60%;
-    background-color: white;
-    border: 2px solid hotpink;
+    background-color: goldenrod;
+    border: 1px solid black;
     cursor: pointer;
 
     @media (max-width: 768px) {
@@ -179,9 +176,9 @@ export const SoundControlButton = styled.button`
     background-repeat: no-repeat;
     background-position: center;
     outline: none;
-    background-size: 60%;
-    background-color: fuchsia;
-    border: 2px solid hotpink;
+    background-size: 80%;
+    background-color: goldenrod;
+    border: 1px solid black;
     cursor: pointer;
     &.off {
         background-image: url(${soundOff});
@@ -194,7 +191,9 @@ export const SoundControlButton = styled.button`
 
 export const TetrisTitle = styled.img`
     width: 100%;
+    height: 200px;
     margin-bottom: 20px;
+    
     @media (max-width: 768px) {
         display: none;
     }
@@ -204,6 +203,7 @@ export const TetrisTitleMobile = styled.img`
     display: none;
     position: absolute;
     width: 100px;
+    height: 80px;
     margin-left: calc(50vw - 50px);
     top: 10px;
     @media (max-width: 768px) {
@@ -215,18 +215,14 @@ export const ShowGuideButton = styled.button`
     font-size: 1.1rem;
     margin: 10px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-family: "Cutive Mono", monospace;
+    background-color: rgba(139, 0, 0);
     font-weight: bold;
     width: fit-content;
     margin: auto;
     padding: 5px 10px;
     border-radius: 53px;
     cursor: pointer;
-    border: 2px solid hotpink;
-    &:hover {
-        text-decoration: underline;
-    }
+    border: 2px solid white;
 `;
 
 export const StageWrapper = styled.div`
@@ -237,7 +233,7 @@ export const StageWrapper = styled.div`
     margin-bottom: 5px;
 
     &.cleared {
-        box-shadow: 0px 0px 11px 11px hotpink;
+        box-shadow: 0px 0px 11px 11px white;
     }
 
     &.gameover {
@@ -265,6 +261,7 @@ export const GuideContentContainer = styled.div`
 export const GuideContentInnerContainer = styled.div`
     margin-left: 20px;
     font-weight: bold;
+    background-color: transparent;
     @media (max-width: 768px) {
         text-align: center;
         margin-left: 0;
@@ -327,7 +324,7 @@ export const MobileArrowContainer = styled.div`
     button {
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 50%;
-        border: 2px solid hotpink;
+        border: 2px solid goldenrod;
         margin: 2px;
         width: 35px;
         height: 35px;
@@ -338,7 +335,6 @@ export const MobileArrowContainer = styled.div`
 
         svg {
             margin-top: 3px;
-            /* margin-left: -3px; */
         }
     }
 `;

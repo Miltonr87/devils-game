@@ -11,7 +11,7 @@ import { usePlayer } from '../hooks/usePlayer';
 import { useStage } from '../hooks/useStage';
 import { useGameStatus } from '../hooks/useGameStatus';
 import * as S from '../styles/styles';
-import logo from '../assets/tetris.svg';
+import logo from '../assets/diablo.gif';
 import arrows from '../assets/arrows.png';
 import tetrisMp3 from '../assets/tetris.mp3';
 
@@ -142,7 +142,11 @@ export const Tetris = () => {
   return (
     <>
       <S.TetrisTitleMobile src={logo} />
-      <Sound url={tetrisMp3} playStatus={isPlaying ? 'PLAYING' : 'STOPPED'} />
+      <Sound
+        url={tetrisMp3}
+        playStatus={isPlaying ? 'PLAYING' : 'STOPPED'}
+        loop={true}
+      />
       <S.SoundControlButton
         className={!isPlaying ? 'off' : ''}
         onClick={() => {
@@ -188,19 +192,22 @@ export const Tetris = () => {
                   <S.TetrisTitle className="desktop-logo" src={logo} />
                   {gameOver ? (
                     <>
-                      <Display text="Game Over" gameOver={gameOver} />
-                      <Display text={`Total Score: ${score}`} />
+                      <Display
+                        text="👹 HIGHWAY TO HELL"
+                        gameOver={gameOver}
+                      ></Display>
+                      <Display text={`⭐ SCORE: ${score}`} />
                     </>
                   ) : (
                     <>
-                      <Display text={`Score: ${score}`} />
-                      <Display text={`Rows: ${rows}`} />
-                      <Display text={`Level: ${level}`} />
+                      <Display text={`⭐ SCORE: ${score}`} />
+                      <Display text={`❤️‍🔥 HEAL: ${rows}`} />
+                      <Display text={`🔥 HELL: ${level}`} />
                     </>
                   )}
                   <StartButton gameOver={gameOver} callback={startGame} />
                   <S.ShowGuideButton onClick={() => setShowGuide(true)}>
-                    How to play
+                    🕹️ Controls
                   </S.ShowGuideButton>
                   <S.Signature>© Milton Rodrigues - {date}</S.Signature>
                 </S.SummaryInfoWrapper>
@@ -213,15 +220,17 @@ export const Tetris = () => {
         <S.CloseGuideModalButton onClick={() => setShowGuide(false)}>
           X
         </S.CloseGuideModalButton>
-        <S.GuideModalTitle>Navigation</S.GuideModalTitle>
+        <S.GuideModalTitle>Controls</S.GuideModalTitle>
         <S.GuideContentContainer>
           <S.GuideArrowImage src={arrows} alt="nav" />
           <S.GuideContentInnerContainer>
-            <p>Up: Rotate</p>
-            <p>Left: Go Left</p>
-            <p>Right: Go Right</p>
-            <p>Down: Go Down</p>
-            {window.innerWidth > 768 ? <p>Hold Down: Go Down Faster</p> : null}
+            <p>Up: rotate brick</p>
+            <p>Left: move left</p>
+            <p>Right: move right</p>
+            <p>Down: move down</p>
+            {window.innerWidth > 768 ? (
+              <p>Hold Down: move down quickly</p>
+            ) : null}
           </S.GuideContentInnerContainer>
         </S.GuideContentContainer>
       </Modal>

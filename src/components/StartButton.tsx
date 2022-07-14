@@ -22,7 +22,7 @@ export const StartButton: FC<StartButtonProps> = ({
       }}
     >
       <span className={isFirstTimePlay ? 'blinking-text' : ''}>
-        {gameOver ? 'Restart Game' : 'Start Game'}
+        {gameOver ? 'RESTART' : 'START'}
       </span>
     </S.StyledStartButton>
   );

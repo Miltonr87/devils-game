@@ -43,12 +43,14 @@ export const MobileNav = ({
         <S.MobileActionContainer>
           <S.MobileActionInnerContainer>
             <S.TetrisTitle className="desktop-logo" src={logo} />
-            {gameOver ? <Display text="Game Over" gameOver={gameOver} /> : null}
+            {gameOver ? (
+              <Display text="💀 GAME OVER" gameOver={gameOver} />
+            ) : null}
           </S.MobileActionInnerContainer>
           <S.MobileActionInnerContainer>
-            <Display text={`Score: ${score}`} />
-            <Display text={`Rows: ${rows}`} />
-            <Display text={`Level: ${level}`} />
+            <Display text={`⭐ ${score}`} />
+            <Display text={`❤️‍🔥 ${rows}`} />
+            <Display text={`🔥 ${level}`} />
           </S.MobileActionInnerContainer>
           <StartButton gameOver={gameOver} callback={startGame} />
           <S.Signature>© Milton Rodrigues - {date}</S.Signature>

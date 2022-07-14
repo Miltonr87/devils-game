@@ -20,7 +20,7 @@ export const MobileActionNav = ({
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"
-          fill="hotpink"
+          fill="goldenrod"
           className="bi bi-arrow-up-short"
           viewBox="0 0 16 16"
         >
@@ -36,7 +36,7 @@ export const MobileActionNav = ({
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
-            fill="hotpink"
+            fill="goldenrod"
             className="bi bi-arrow-left-short"
             viewBox="0 0 16 16"
           >
@@ -51,7 +51,7 @@ export const MobileActionNav = ({
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
-            fill="hotpink"
+            fill="goldenrod"
             className="bi bi-arrow-right-short"
             viewBox="0 0 16 16"
           >
@@ -67,7 +67,7 @@ export const MobileActionNav = ({
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"
-          fill="hotpink"
+          fill="goldenrod"
           className="bi bi-arrow-down-short"
           viewBox="0 0 16 16"
         >
