@@ -163,7 +163,8 @@ export const ShowMobileGuideButton = styled.button`
     cursor: pointer;
 
     @media (max-width: 768px) {
-        padding: 13px;
+        display: none
+        /* bug with almost mobile dimensions */
     }
 `;
 
