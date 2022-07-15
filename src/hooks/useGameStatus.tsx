@@ -10,11 +10,13 @@ export const useGameStatus = (rowsCleared: number) => {
     const linePoints = [40, 100, 300, 1200];
     if (rowsCleared > 0) {
       setScore((prev) => prev + linePoints[rowsCleared - 1] * (level + 1));
-      setLevel((prev) => prev + 1);
       setRows((prev) => prev + rowsCleared);
       setIsSuccessRowsCleared(true);
     }
-  }, [level, rowsCleared]);
+    if (rows > (level + 1) * 10) {
+      setLevel((prev) => prev + 1);
+    }
+  }, [level, rowsCleared, rows]);
 
   useEffect(() => {
     calcScore();
