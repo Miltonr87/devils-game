@@ -2,4 +2,4 @@
 
 Improvements to the project taught by Weibenfalk in https://www.youtube.com/watch?v=jEjj2jvHpv4&t=2495s
 
-Added new UI, React Sound, Material UI, Styled Components, new rules for the game and animations.
+Added new UI (mobile priority with joypad), new rules and animations. I used React Sound, Material UI and Styled Components for the improvements.
