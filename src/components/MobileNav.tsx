@@ -44,7 +44,7 @@ export const MobileNav = ({
           <S.MobileActionInnerContainer>
             <S.TetrisTitle className="desktop-logo" src={logo} />
             {gameOver ? (
-              <Display text="🔥 HELL OVER !!!" gameOver={gameOver} />
+              <Display text="🔥 HIGHWAY TO HELL !!!" gameOver={gameOver} />
             ) : null}
           </S.MobileActionInnerContainer>
           <S.MobileActionInnerContainer>

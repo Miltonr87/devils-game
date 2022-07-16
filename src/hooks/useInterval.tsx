@@ -1,4 +1,4 @@
-// Custom hook by Dan Abramov
+// Custom hook by Dan Abramov with minor changes
 import * as React from 'react';
 
 const { useEffect, useRef } = React;

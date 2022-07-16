@@ -74,7 +74,7 @@ export const Tetris = () => {
   };
 
   const drop = () => {
-    // RULES: increase level when player clear 10 rows(hells)
+    // RULES: increase level when player clear 10 rows
     if (rows > (level + 1) * 10) {
       setLevel((prev) => prev + 1);
       setDropTime(1000 / (level + 1) + 200);
@@ -193,7 +193,7 @@ export const Tetris = () => {
                   {gameOver ? (
                     <>
                       <Display
-                        text="🔥 HELL OVER !!! "
+                        text="🔥 HIGHWAY TO HELL !!! "
                         gameOver={gameOver}
                       ></Display>
                       <Display text={`⭐ SCORE: ${score}`} />
