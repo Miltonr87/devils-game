@@ -156,13 +156,13 @@ export const StyledPauseButton = styled.button`
     width: fit-content;
     margin: auto;
     padding: 5px 10px;
-    border-radius: 53px;
+    border-radius: 10px;
     cursor: pointer;
     border: 2px solid white;
     @media (max-width: 768px) {
         margin: -10px 0 20px 0;
         padding: 5px;
-        width: 78%;
+        width: 62%;
         align-self: center;
     }
 `;
@@ -184,7 +184,6 @@ export const ShowMobileGuideButton = styled.button`
     @media (max-width: 768px) {
         display: true;
         padding: 11px;
-        /* bug in almost mobile dimensions */
     }
 `;
 

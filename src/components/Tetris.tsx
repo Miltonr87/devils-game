@@ -37,7 +37,7 @@ export const Tetris = () => {
   const [isFirstTimeChangeSound, setIsFirstTimeChangeSound] = useState(true);
 
   const [paused, setPaused] = useState(false);
-  const [pauseText, setPauseText] = useState('🔴 PAUSE');
+  const [pauseText, setPauseText] = useState('🛑 STOP');
 
   const [player, updatePlayerPos, resetPlayer, rotateActiveTetromino] =
     usePlayer();
@@ -80,11 +80,13 @@ export const Tetris = () => {
     if (paused !== true) {
       setDropTime(null);
       setPaused(true);
-      setPauseText('🟢 RETURN');
+      setIsPlaying(false);
+      setPauseText('🟢 PLAY');
     } else if (paused === true) {
-      setDropTime(level === 1 ? 1000 : level + 1 + 200);
+      setDropTime(level === 1 ? 1000 : 1000 / (level + 1) + 200);
       setPaused(false);
-      setPauseText('🔴 PAUSE');
+      setIsPlaying(true);
+      setPauseText('🛑 STOP');
     }
   };
 
@@ -218,7 +220,7 @@ export const Tetris = () => {
                   ) : (
                     <>
                       <Display text={`⭐ SCORE: ${score}`} />
-                      <Display text={`💛 HEART: ${rows}`} />
+                      <Display text={`❤️‍🔥 HEART: ${rows}`} />
                       <Display text={`🤘 LEVEL: ${level}`} />
                     </>
                   )}

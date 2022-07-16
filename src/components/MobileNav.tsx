@@ -38,6 +38,18 @@ export const MobileNav = ({
   return (
     <>
       <S.ShowMobileGuideButton onClick={() => showNavAction()} />
+      <S.MobileActionInnerContainer>
+        <S.TetrisTitle className="desktop-logo" src={logo} />
+        {gameOver ? (
+          <div
+            style={{
+              margin: '10px 0 0 0',
+            }}
+          >
+            <Display text="🔥 HIGHWAY TO HELL !!!" gameOver={gameOver} />
+          </div>
+        ) : null}
+      </S.MobileActionInnerContainer>
       <S.MobileOuterActionContainer>
         <MobileActionNav
           upAction={() => upAction()}
@@ -46,12 +58,6 @@ export const MobileNav = ({
           downAction={() => downAction()}
         />
         <S.MobileActionContainer>
-          <S.MobileActionInnerContainer>
-            <S.TetrisTitle className="desktop-logo" src={logo} />
-            {gameOver ? (
-              <Display text="🔥 HIGHWAY TO HELL !!!" gameOver={gameOver} />
-            ) : null}
-          </S.MobileActionInnerContainer>
           <S.MobileActionInnerContainer>
             <Display text={`${score}`} />
             <Display text={`💛 ${rows}`} />
