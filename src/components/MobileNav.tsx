@@ -2,6 +2,7 @@ import * as S from '../styles/styles';
 import { MobileActionNav } from './MobileActionNav';
 import { Display } from './Display';
 import { StartButton } from './StartButton';
+import PauseButton from './PauseButton';
 import logo from '../assets/tetris.svg';
 
 interface MobileNavProps {
@@ -10,6 +11,8 @@ interface MobileNavProps {
   rightAction: any;
   downAction: any;
   startGame: any;
+  pauseGame: any;
+  pauseText: string;
   showNavAction: any;
   gameOver: boolean;
   score: number;
@@ -24,6 +27,8 @@ export const MobileNav = ({
   downAction,
   startGame,
   gameOver,
+  pauseGame,
+  pauseText,
   score,
   rows,
   level,
@@ -53,6 +58,7 @@ export const MobileNav = ({
             <Display text={`🤘 ${level}`} />
           </S.MobileActionInnerContainer>
           <StartButton gameOver={gameOver} callback={startGame} />
+          <PauseButton callback={pauseGame} text={pauseText} />
           <S.Signature>© Milton Rodrigues - {date}</S.Signature>
         </S.MobileActionContainer>
       </S.MobileOuterActionContainer>

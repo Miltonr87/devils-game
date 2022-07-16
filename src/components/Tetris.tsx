@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { Stage } from './Stage';
 import { Display } from './Display';
 import { StartButton } from './StartButton';
+import PauseButton from './PauseButton';
 import { MobileNav } from './MobileNav';
 import { createStage, checkCollission } from '../utils/gameHelper';
 import { useInterval } from '../hooks/useInterval';
@@ -35,6 +36,9 @@ export const Tetris = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFirstTimeChangeSound, setIsFirstTimeChangeSound] = useState(true);
 
+  const [paused, setPaused] = useState(false);
+  const [pauseText, setPauseText] = useState('🔴 PAUSE');
+
   const [player, updatePlayerPos, resetPlayer, rotateActiveTetromino] =
     usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -63,7 +67,6 @@ export const Tetris = () => {
       setIsFirstTimeChangeSound(false);
       setIsPlaying(true);
     }
-    // reset everythingg
     setStage(createStage());
     setDropTime(1000);
     resetPlayer();
@@ -71,6 +74,18 @@ export const Tetris = () => {
     setScore(0);
     setRows(0);
     setLevel(1);
+  };
+
+  const pauseGame = () => {
+    if (paused !== true) {
+      setDropTime(null);
+      setPaused(true);
+      setPauseText('🟢 RETURN');
+    } else if (paused === true) {
+      setDropTime(level === 1 ? 1000 : level + 1 + 200);
+      setPaused(false);
+      setPauseText('🔴 PAUSE');
+    }
   };
 
   const drop = () => {
@@ -179,6 +194,8 @@ export const Tetris = () => {
               rightAction={() => moveActiveTetromino(1)}
               downAction={() => drop()}
               startGame={startGame}
+              pauseGame={pauseGame}
+              pauseText={pauseText}
               gameOver={gameOver}
               score={score}
               rows={rows}
@@ -206,9 +223,10 @@ export const Tetris = () => {
                     </>
                   )}
                   <StartButton gameOver={gameOver} callback={startGame} />
-                  <S.ShowGuideButton onClick={() => setShowGuide(true)}>
-                    Controls
-                  </S.ShowGuideButton>
+                  <PauseButton callback={pauseGame} text={pauseText} />
+                  <S.ShowMobileGuideButton
+                    onClick={() => setShowGuide(true)}
+                  ></S.ShowMobileGuideButton>
                   <S.Signature>© Milton Rodrigues - {date}</S.Signature>
                 </S.SummaryInfoWrapper>
               </aside>
@@ -230,7 +248,7 @@ export const Tetris = () => {
             <p>Down: move down</p>
             {window.innerWidth > 768 ? (
               // eslint-disable-next-line react/style-prop-object
-              <i>"Hold Down: move down quickly"</i>
+              <i>Hold Down: move down quickly</i>
             ) : null}
           </S.GuideContentInnerContainer>
         </S.GuideContentContainer>

@@ -147,12 +147,31 @@ export const StyledStartButton = styled.button`
     }
 `;
 
+export const StyledPauseButton = styled.button`
+    font-size: 1.1rem;
+    margin: 10px;
+    color: white;
+    background-color: rgba(139, 0, 0);
+    font-weight: bold;
+    width: fit-content;
+    margin: auto;
+    padding: 5px 10px;
+    border-radius: 53px;
+    cursor: pointer;
+    border: 2px solid white;
+    @media (max-width: 768px) {
+        margin: -10px 0 20px 0;
+        padding: 5px;
+        width: 78%;
+        align-self: center;
+    }
+`;
+
 export const ShowMobileGuideButton = styled.button`
     background-image: url(${help});
     padding: 20px;
     border-radius: 50%;
     position: absolute;
-    right: 0;
     top: 10px;
     left: 10px;
     background-repeat: no-repeat;
@@ -163,7 +182,8 @@ export const ShowMobileGuideButton = styled.button`
     cursor: pointer;
 
     @media (max-width: 768px) {
-        display: none
+        display: true;
+        padding: 11px;
         /* bug in almost mobile dimensions */
     }
 `;
@@ -242,22 +262,7 @@ export const StageWrapper = styled.div`
     }
 `;
 
-
 /*------------------- GUIDE MODAL -----------------------*/
-
-export const ShowGuideButton = styled.button`
-    font-size: 1.1rem;
-    margin: 10px;
-    color: white;
-    background-color: rgba(139, 0, 0);
-    font-weight: bold;
-    width: fit-content;
-    margin: auto;
-    padding: 5px 10px;
-    border-radius: 53px;
-    cursor: pointer;
-    border: 2px solid white;
-`;
 
 export const GuideModalTitle = styled.h1`
     margin-top: 0;
@@ -304,7 +309,7 @@ export const CloseGuideModalButton = styled.button`
 export const Signature = styled.a`
     color: white;
     font-weight: bold;
-    margin-top: 50px;
+    margin-top: 20px;
     display: block;
     font-size: 1rem;
     @media (max-width: 768px) {
