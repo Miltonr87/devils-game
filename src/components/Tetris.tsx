@@ -117,7 +117,7 @@ export const Tetris = () => {
 
   const keyUp = ({ keyCode }: React.KeyboardEvent<HTMLDivElement>) => {
     if (!gameOver) {
-      if (keyCode === 40) {
+      if (keyCode === 40 && paused === false) {
         // down key
         setDropTime(1000 / (level + 1) + 200);
       }
@@ -131,16 +131,16 @@ export const Tetris = () => {
 
   const move = ({ keyCode }: React.KeyboardEvent<HTMLDivElement>) => {
     if (!gameOver) {
-      if (keyCode === 37) {
+      if (keyCode === 37 && paused === false) {
         // left arrow
         moveActiveTetromino(-1);
-      } else if (keyCode === 39) {
+      } else if (keyCode === 39 && paused === false) {
         // right arrow
         moveActiveTetromino(1);
-      } else if (keyCode === 40) {
+      } else if (keyCode === 40 && paused === false) {
         // down arrow
         dropPlayer();
-      } else if (keyCode === 38) {
+      } else if (keyCode === 38 && paused === false) {
         // up arrow
         rotateActiveTetromino(stage, 1);
       }
@@ -197,6 +197,7 @@ export const Tetris = () => {
               downAction={() => drop()}
               startGame={startGame}
               pauseGame={pauseGame}
+              paused={paused}
               pauseText={pauseText}
               gameOver={gameOver}
               score={score}

@@ -12,6 +12,7 @@ interface MobileNavProps {
   downAction: any;
   startGame: any;
   pauseGame: any;
+  paused: boolean;
   pauseText: string;
   showNavAction: any;
   gameOver: boolean;
@@ -28,6 +29,7 @@ export const MobileNav = ({
   startGame,
   gameOver,
   pauseGame,
+  paused,
   pauseText,
   score,
   rows,
@@ -51,12 +53,16 @@ export const MobileNav = ({
         ) : null}
       </S.MobileActionInnerContainer>
       <S.MobileOuterActionContainer>
-        <MobileActionNav
-          upAction={() => upAction()}
-          leftAction={() => leftAction()}
-          rightAction={() => rightAction()}
-          downAction={() => downAction()}
-        />
+        {paused ? (
+          <div />
+        ) : (
+          <MobileActionNav
+            upAction={() => upAction()}
+            leftAction={() => leftAction()}
+            rightAction={() => rightAction()}
+            downAction={() => downAction()}
+          />
+        )}
         <S.MobileActionContainer>
           <S.MobileActionInnerContainer>
             <Display text={`${score}`} />
