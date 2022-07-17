@@ -162,7 +162,7 @@ export const StyledPauseButton = styled.button`
     @media (max-width: 768px) {
         margin: -10px 0 20px 0;
         padding: 5px;
-        width: 62%;
+        width: 70%;
         align-self: center;
     }
 `;
