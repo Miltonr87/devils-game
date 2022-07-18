@@ -1,6 +1,6 @@
 ### Devils Game 3.0
 
-![Screen Shot](https://github.com/Miltonr87/Lamborghini-Collection/blob/main/devils.png)
+![Screen Shot](https://github.com/Miltonr87/devils-game/blob/master/devils.png)
 
 [X] Mobile version
 
