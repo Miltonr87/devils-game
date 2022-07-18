@@ -1,6 +1,6 @@
 ### Devils Game 3.0
 
-![Screen Shot](https://github.com/Miltonr87/devils-game/blob/master/devils.png)
+![Screen Shot](https://github.com/Miltonr87/devils-game/blob/master/devilsgame.png)
 
 [X] Mobile version
 
@@ -18,14 +18,15 @@ Thanks to [Thomas Weibenfalk](https://github.com/weibenfalk/react-tetris-with-ty
 
 ### Getting Starter
 
-- Clone the repo (HTTP Protocol): ```git clone https://github.com/Miltonr87/devils-game.git```
-- Using NPM or Yarn to install the React APP and run the project on your computer. 
+- Clone the repo (HTTP Protocol): `git clone https://github.com/Miltonr87/devils-game.git`
+- Using NPM or Yarn to install the React APP and run the project on your computer.
 
 ### Required
 
 As you see, **Devils Game** runs on [Node.js](https://nodejs.org/), so before you can continue, please ensure that you have it installed with NPM or Yarn. Once you have Node installed, you will need the React (17.02) library and Typescript (4.1.2). So, to start the project in your machine, open your terminal inside the Devils Game folder and type "NPM Install" or "Yarn Install".
 
 ### Additional packages
+
 - [Typescript](https://www.typescriptlang.org/) (Javascript superset and architecture)
 - [React Sound](https://www.npmjs.com/package/react-sound) (To manage sound on Components)
 - [Styled Components](https://github.com/styled-components/styled-components) (Used to increase performance CSS-In-JS)
@@ -35,7 +36,7 @@ As you see, **Devils Game** runs on [Node.js](https://nodejs.org/), so before yo
 
 [Demon Slayer song by TommyMutiu](https://pixabay.com/pt/music/acao-return-of-the-demon-slayer-8686/)
 
-### Live Demo 
+### Live Demo
 
 - [LIVE DEMO](https://devils-game.vercel.app/)
 
