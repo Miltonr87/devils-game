@@ -113,7 +113,7 @@ export const StyledDisplay = styled.div<StyledDisplayProps>`
     font-size: 1rem;
     @media (max-width: 768px) {
         padding: 5px;
-        margin: 10px 5px;
+        margin: 5px 5px 10px 5px;
         font-size: 12px;
     }
 `;

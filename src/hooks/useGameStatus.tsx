@@ -20,7 +20,7 @@ export const useGameStatus = (rowsCleared: number) => {
 
   useEffect(() => {
     calcScore();
-  }, [calcScore, rowsCleared, score]);
+  }, [calcScore, rowsCleared, score, level]);
 
   return [
     score,

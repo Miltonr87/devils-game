@@ -47,9 +47,7 @@ export const MobileNav = ({
         ) : null}
       </S.MobileActionInnerContainer>
       <S.MobileOuterActionContainer>
-        {paused ? (
-          <div />
-        ) : (
+        {paused || gameOver ? null : (
           <MobileActionNav
             upAction={() => upAction()}
             leftAction={() => leftAction()}
@@ -64,7 +62,9 @@ export const MobileNav = ({
             <Display text={`🤘 ${level}`} />
           </S.MobileActionInnerContainer>
           <StartButton gameOver={gameOver} callback={startGame} />
-          <PauseButton callback={pauseGame} text={pauseText} />
+          {gameOver ? null : (
+            <PauseButton callback={pauseGame} text={pauseText} />
+          )}
           <S.Signature>© Milton Rodrigues - {date}</S.Signature>
         </S.MobileActionContainer>
       </S.MobileOuterActionContainer>
