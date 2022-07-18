@@ -14,7 +14,7 @@ _* **ATTENTION**: This project was changed after the first version (a web app th
 
 ### Special Thanx
 
-Thanks to [Thomas Weibenfalk](https://github.com/weibenfalk/react-tetris-with-typescript) for providing the brick parts (which are an adaptation of input letters like ['I', 'J', 'L', 'O', 'S', 'T', 'Z'] without these details this mini-project would not have gone beyond the code editor. You can follow the version he made for FreeCodeCamp and get inspired in the link above.
+Thanks to [Thomas Weibenfalk](https://github.com/weibenfalk/react-tetris-with-typescript) for providing the brick parts (which are an adaptation of input letters like ['I', 'J', 'L', 'O', 'S', 'T', 'Z']) without these details this mini-project would not have gone beyond the code editor. You can follow the version he made for FreeCodeCamp and get inspired in the link above.
 
 ### Getting Starter
 
