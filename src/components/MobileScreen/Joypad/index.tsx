@@ -1,24 +1,24 @@
-import * as S from '../styles/styles';
+import { MobileArrowContainer } from './styles';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
-interface MobileActionNavProps {
+interface JoypadProps {
   upAction: any;
   leftAction: any;
   rightAction: any;
   downAction: any;
 }
 
-export const MobileActionNav = ({
+export const Joypad = ({
   upAction,
   leftAction,
   rightAction,
   downAction,
-}: MobileActionNavProps) => {
+}: JoypadProps) => {
   return (
-    <S.MobileArrowContainer>
+    <MobileArrowContainer>
       <button onClick={() => upAction()}>
         <ArrowDropUpIcon
           fontSize="large"
@@ -61,6 +61,6 @@ export const MobileActionNav = ({
           }}
         />
       </button>
-    </S.MobileArrowContainer>
+    </MobileArrowContainer>
   );
 };

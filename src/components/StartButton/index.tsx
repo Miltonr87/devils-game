@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import * as S from '../styles/styles';
+import { StyledStartButton } from './styles';
 
 interface StartButtonProps {
   callback(): void;
@@ -13,7 +13,7 @@ export const StartButton: FC<StartButtonProps> = ({
   const [isFirstTimePlay, setIsFirstTimePlay] = useState(true);
 
   return (
-    <S.StyledStartButton
+    <StyledStartButton
       onClick={() => {
         if (isFirstTimePlay) {
           setIsFirstTimePlay(false);
@@ -24,6 +24,6 @@ export const StartButton: FC<StartButtonProps> = ({
       <span className={isFirstTimePlay ? 'blinking-text' : ''}>
         {gameOver ? 'RESTART' : 'START'}
       </span>
-    </S.StyledStartButton>
+    </StyledStartButton>
   );
 };

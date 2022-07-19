@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import Sound from 'react-sound';
 import Modal from 'react-modal';
-import { Stage } from './Stage';
-import { Display } from './Display';
-import { StartButton } from './StartButton';
-import PauseButton from './PauseButton';
-import { MobileNav } from './MobileNav';
-import { createStage, checkCollission } from '../utils/gameHelper';
-import { useInterval } from '../hooks/useInterval';
-import { usePlayer } from '../hooks/usePlayer';
-import { useStage } from '../hooks/useStage';
-import { useGameStatus } from '../hooks/useGameStatus';
-import * as S from '../styles/styles';
-import logo from '../assets/tetris.svg';
-import arrows from '../assets/arrows.png';
-import tetrisMp3 from '../assets/tetris.mp3';
+import { Stage } from '../Stage';
+import { GameOver } from '../GameOver';
+import { StartButton } from '../StartButton';
+import { PauseButton } from '../PauseButton';
+import { MobileScreen } from '../MobileScreen';
+import { createStage, checkCollission } from '../../utils/gameHelper';
+import { useInterval } from '../../hooks/useInterval';
+import { usePlayer } from '../../hooks/usePlayer';
+import { useStage } from '../../hooks/useStage';
+import { useGameStatus } from '../../hooks/useGameStatus';
+import * as S from './styles';
+import logo from '../../assets/tetris.svg';
+import arrows from '../../assets/arrows.png';
+import tetrisMp3 from '../../assets/tetris.mp3';
 
 const customStyles = {
   content: {
@@ -29,16 +29,14 @@ const customStyles = {
 
 type DropTime = null | number;
 
-export const Tetris = () => {
+export const Main = () => {
   const [dropTime, setDropTime] = useState<DropTime>(null);
   const [gameOver, setGameOver] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFirstTimeChangeSound, setIsFirstTimeChangeSound] = useState(true);
-
   const [paused, setPaused] = useState(false);
   const [pauseText, setPauseText] = useState('🛑 PAUSE');
-
   const [player, updatePlayerPos, resetPlayer, rotateActiveTetromino] =
     usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -189,7 +187,7 @@ export const Tetris = () => {
           </S.StageWrapper>
 
           {window.innerWidth <= 768 ? (
-            <MobileNav
+            <MobileScreen
               upAction={() => rotateActiveTetromino(stage, 1)}
               leftAction={() => moveActiveTetromino(-1)}
               rightAction={() => moveActiveTetromino(1)}
@@ -211,17 +209,17 @@ export const Tetris = () => {
                   <S.TetrisTitle className="desktop-logo" src={logo} />
                   {gameOver ? (
                     <>
-                      <Display
+                      <GameOver
                         text="🔥 HIGHWAY TO HELL !!! "
                         gameOver={gameOver}
-                      ></Display>
-                      <Display text={`⭐ SCORE: ${score}`} />
+                      ></GameOver>
+                      <GameOver text={`⭐ SCORE: ${score}`} />
                     </>
                   ) : (
                     <>
-                      <Display text={`⭐ SCORE: ${score}`} />
-                      <Display text={`❤️‍🔥 HEART: ${rows}`} />
-                      <Display text={`🤘 LEVEL: ${level}`} />
+                      <GameOver text={`⭐ SCORE: ${score}`} />
+                      <GameOver text={`❤️‍🔥 HEART: ${rows}`} />
+                      <GameOver text={`🤘 LEVEL: ${level}`} />
                     </>
                   )}
                   <StartButton gameOver={gameOver} callback={startGame} />
