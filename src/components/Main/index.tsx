@@ -15,6 +15,7 @@ import * as S from './styles';
 import logo from '../../assets/tetris.svg';
 import arrows from '../../assets/arrows.png';
 import tetrisMp3 from '../../assets/tetris.mp3';
+import gameOverMp3 from '../../assets/gameOver.mp3';
 
 const customStyles = {
   content: {
@@ -161,6 +162,7 @@ export const Main = () => {
         playStatus={isPlaying ? 'PLAYING' : 'STOPPED'}
         loop={true}
       />
+      <Sound url={gameOverMp3} playStatus={gameOver ? 'PLAYING' : 'STOPPED'} />
       <S.SoundControlButton
         className={!isPlaying ? 'off' : ''}
         onClick={() => {
@@ -170,7 +172,6 @@ export const Main = () => {
           setIsPlaying(!isPlaying);
         }}
       />
-
       <S.StyledTetrisWrapper
         role="button"
         tabIndex={0}
